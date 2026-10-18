@@ -4,27 +4,6 @@ A comprehensive end-to-end data engineering and analytics pipeline using **Mongo
 
 ---
 
-## 📑 Table of Contents
-
-- [Overview](#-overview)
-- [Project Architecture](#-project-architecture)
-- [Repository Structure](#-repository-structure)
-- [Dataset Overview](#-dataset-overview)
-- [Prerequisites](#-prerequisites)
-- [Installation & Setup](#-installation--setup)
-- [Configuration](#-configuration)
-- [Execution Pipeline](#-execution-pipeline)
-  - [1. Test Connection](#1-test-connection-test_connectionpy)
-  - [2. Apply Schema Validation](#2-apply-schema-validation-schema_validationpy)
-  - [3. Migrate & Ingest Data](#3-migrate--ingest-data-data_migrationpy)
-  - [4. Perform CRUD Operations](#4-perform-crud-operations-crud_operationspy)
-  - [5. Run Revenue & Sales Aggregations](#5-run-revenue--sales-aggregations-revenue_aggregationpy)
-- [Document Schema & Validation Rules](#-document-schema--validation-rules)
-- [Key Aggregation Pipelines](#-key-aggregation-pipelines)
-- [Performance Optimization & Indexing](#-performance-optimization--indexing)
-- [License](#-license)
-
----
 
 ## 🎯 Overview
 
@@ -80,7 +59,6 @@ Mongo/
 └── README.md                  # Project documentation and user guide
 ```
 
----
 
 ## 📊 Dataset Overview
 
@@ -113,34 +91,6 @@ The dataset (`Amazon Sale Report.csv`) contains **128,975 transaction records** 
 2. **MongoDB Instance**:
    - **Local**: [MongoDB Community Server](https://www.mongodb.com/try/download/community) running locally at `localhost:27017`.
    - **Cloud**: [MongoDB Atlas](https://www.mongodb.com/atlas/database) cloud cluster with an active connection string.
-
----
-
-## 🚀 Installation & Setup
-
-### 1. Clone or Open the Project
-Open terminal or PowerShell in the project directory:
-```powershell
-cd c:\Users\tunga\OneDrive\Documents\Projects\Mongo
-```
-
-### 2. Create and Activate a Virtual Environment
-```powershell
-# Create virtual environment
-python -m venv venv
-
-# Activate on Windows PowerShell
-.\venv\Scripts\Activate.ps1
-
-# Activate on Git Bash / Linux / macOS
-source venv/bin/activate
-```
-
-### 3. Install Required Dependencies
-Create a `requirements.txt` or install packages directly:
-```powershell
-pip install pymongo pandas python-dotenv
-```
 
 ---
 
@@ -308,18 +258,4 @@ db.sales_orders.create_index([("date", -1)])
 db.sales_orders.create_index([("shipping_address.state", 1)])
 ```
 
----
 
-## 🤝 Contributing
-
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/NewAnalyticsQuery`).
-3. Commit your Changes (`git commit -m 'Add state-wise return rate aggregation'`).
-4. Push to the Branch (`git push origin feature/NewAnalyticsQuery`).
-5. Open a Pull Request.
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
